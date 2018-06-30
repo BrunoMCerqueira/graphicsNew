@@ -1,3 +1,21 @@
 // Place all the styles related to the graphs controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.title {
+  text-align: center;
+  width: 100%;
+  padding: 20px;
+  font-family: 'Helvetica';
+  color: white;
+  background: linear-gradient(132deg, #0fb8ad 0%, #1fc8db 51%, #2cb5e8 55%);
+  p {
+    font-size: 15px;
+  }
+}
+
+.example {
+  text-align: center;
+  width: 100%;
+  background: linear-gradient(141deg, #0fb8ad 0%, #1fc8db 51%, #2cb5e8 75%);
+  padding: 30px;
+}

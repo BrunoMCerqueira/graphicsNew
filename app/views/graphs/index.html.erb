@@ -6,7 +6,13 @@
 
  </head>
  <body>
-
+  <div class="title">
+    <h1>Gráficos criados com D3.js</h1>
+    <p>
+      Diversos gráficos criados para o aprendizado da biblioteca D3.
+    </p>
+  </div>
+  <div class="example"></div>
 
 <!-- Script include in the page.
  d3 methods: scaleLinear (domain, range) / max / select (append, attr) / selectAll (data, enter (append, attr))
@@ -15,13 +21,13 @@
 -->
   <script>
 
-    var dataArray = [10, 20, 40, 80];
+    var dataArray = [10, 20, 40, 60];
     var width = 500;
-    var height = 500;
+    var height = 300;
 
 
     var widthScale = d3.scaleLinear()
-                       .domain([0, d3.max(dataArray)])
+                       .domain([0, + d3.max(dataArray)])
                        .range([0, width]);
 
     var color = d3.scaleLinear()
@@ -29,12 +35,12 @@
                   .range(["blue", "yellow"])
 
 
-    var canvas = d3.select("body")
+    var canvas = d3.select(".example")
                   .append("svg")
-                  .attr("width", width)
+                  .attr("width", width + 20)
                   .attr("height", height)
                     .append("g")
-                    .attr("transform", "translate(50, 50)")
+                    .attr("transform", "translate(10, 10)")
 
     canvas.append("g")
           .attr("transform", "translate(0, 220)")
@@ -48,15 +54,6 @@
                     .attr("height", 50)
                     .attr("fill", function(d) { return color(d); })
                     .attr("y", function(d, i) { return i * 55; } );
-
-
-
-
-
-
-
-
-
 
 
   </script>

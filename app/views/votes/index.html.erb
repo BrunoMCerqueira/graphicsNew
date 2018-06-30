@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>votes</title>
+  </head>
+  <body>
+    <div class="main-container">
+      <h1>Vermelho vs. Amarelo</h1>
+      <div id="vote-counter">
+        <h3>Contador</h3>
+        <div >
+          <p>Vermelho: <span id="red-count"><%= @votes[0] %></span></p>
+          <p>Amarelo: <span id="yellow-count"><%= @votes[1] %></span></p>
+        </div>
+      </div>
+      <div id="voting-box">
+        <%= link_to 'Vota Vermelho', votes_path(vote: {color: 'red'}), {remote: true, method: :post, class: 'vote-button red' } %>
+        <%= link_to 'Vote Amarelo', votes_path(vote: {color: 'yellow'}), {remote: true, method: :post, class: 'vote-button yellow' } %>
+      </div>
+      <div id="plot-container">
+
+      </div>
+    </div>
+
+  </body>
+</html>

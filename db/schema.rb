@@ -10,10 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180216205342) do
+ActiveRecord::Schema.define(version: 20180307022515) do
 
   create_table "graphs", force: :cascade do |t|
     t.float "kg"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "kilograms", force: :cascade do |t|
+    t.float "kg"
+    t.date "kg_date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "votes", force: :cascade do |t|
+    t.string "color"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

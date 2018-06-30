@@ -1,0 +1,26 @@
+// Place all the styles related to the votes controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.main-container {
+  text-align: center;
+}
+
+#voting-box {
+  margin: 80px 0 70px 0;
+}
+
+.yellow {
+  background-color: yellow;
+}
+
+.red {
+  background-color: red;
+}
+
+.vote-button {
+  padding: 60px 20px;
+  border-radius: 50%;
+  color: #000;
+  font-weight: bold;
+  text-decoration: none;
+}

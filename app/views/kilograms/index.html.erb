@@ -1,0 +1,23 @@
+<h1>Pesate gordo!</h1>
+
+<%= form_with(model: @kilogram) do |f| %>
+  <%= f.text_field :kg %>
+  <%= f.date_field :kg_date %>
+  <%= f.submit %>
+
+<% end %>
+
+<% if @last_kilo %>
+  <div class="kilograms">
+    <p class="kilos"><strong>Kilos:</strong> <%= @last_kilo.kg %> kg</p>
+    <p class="data"><strong>Fecha:</strong> <%= @last_kilo.kg_date %></p>
+  </div>
+<% end %>
+
+<div class="kgGraph"></div>
+<script>
+  $(document).ready(function(){
+  loadKilogramGraphic();
+});
+
+</script>
