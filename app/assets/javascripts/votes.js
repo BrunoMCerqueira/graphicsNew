@@ -56,22 +56,23 @@ function drawBarPlot(data){
   // define linear y-axis scale
   var yScale = d3.scaleLinear()
                  .domain([0, d3.max(data)])
-                 .range([0, barheight]);
+                 .range([0, barheight- 10]);
 
 
   var yScaleAxis = d3.scaleLinear()
                  .domain([0, d3.max(data)])
-                 .range([barheight, 0]);
+                 .range([barheight - 10, 0]);
 
   var canvas = d3.select("#plot-container")
                   .append("svg")
                   .attr("width", 400)
-                  .attr("height", barheight)
+                  .attr("height", barheight + 20)
                     .append("g")
                     .attr("transform", "translate(60, 0)")
 
     canvas.append("g")
-
+          .attr("class", "y axis")
+          .attr("transform", "translate(0, 10)")
           .call(d3.axisRight(yScaleAxis).ticks(5));﻿
 
     canvas.selectAll("rect")
@@ -92,11 +93,11 @@ function drawBarPlot(data){
 }
 
 function updateBar(data) {
+
+  // Updating bars
   var yScale = d3.scaleLinear()
                  .domain([0, d3.max(data)])
-                 .range([0, barheight]);
-
-
+                 .range([0, barheight - 10]);
 
     d3.selectAll("rect")
     .data(data)
@@ -104,4 +105,12 @@ function updateBar(data) {
     .attr("y", function(d){
         return barheight - yScale(d); // scale bars within plotting area
     });
+
+  // Updating Yaxis
+  var yScaleAxis = d3.scaleLinear()
+                 .domain([0, d3.max(data)])
+                 .range([barheight - 10, 0]);
+
+  d3.selectAll("g .y.axis")
+     .call(d3.axisRight(yScaleAxis).ticks(5));﻿
 }
